@@ -26,18 +26,13 @@ const SERVER_URL = process.env.SERVER_URL;
  *
  * @returns {undefined}
  */
-const setDomainWhitelisting = () => {
-  api.callThreadAPI(
-    {
-      setting_type: 'domain_whitelisting',
-      whitelisted_domains: [SERVER_URL],
-      domain_action_type: 'add',
-    },
-    {
-      fields: 'whitelisted_domains',
-    }
-  );
-};
+ const setDomainWhitelisting = () => {
+   api.callMessengerProfileAPI(
+     {
+       whitelisted_domains: [SERVER_URL],
+     }
+   );
+ };
 
 /**
  * Sets the persistent menu for the application

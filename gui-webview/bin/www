@@ -37,8 +37,11 @@ const normalizePort = (val) => {
 };
 
 // Get port from environment and store in Express.
-const port = normalizePort(process.env.PORT || '3000');
-app.set('port', port);
+const port = normalizePort(process.env.PORT || '9000');
+app.set('port', 3000);
+
+// Create HTTP server.
+const server = http.createServer(app);
 
 // Event listener for HTTP server "error" event.
 const onError = (error) => {
